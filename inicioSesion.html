@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <!-- El encabezado se agregará aquí mediante JavaScript -->
+    </header>  
+
+    <nav id="menu">
+        <!-- El contenido del menú se agregará aquí mediante JavaScript -->
+    </nav>
+
+    <footer>
+        <!-- El pie de página se agregará aquí mediante JavaScript -->
+    </footer>
+
+    <main>
+      <div class="contenido">
+        <div class="articulos">
+            <div class="secciones">
+                <div class="seccion">
+                    <div class="formulario">
+                        <h2>Iniciar Sesión</h2>
+                        <form id="formulario">
+
+                            <label for="correo">Nombre de usuario</label>
+                            <input id="correo" type="email" placeholder="ejemplo@correo.com" required>
+
+                            <label for="contrasenna">Contraseña:</label>
+                            <input id="contrasenna" type="password" required>
+
+                            <button type="submit">Iniciar Sesión</button>
+                        </form>
+                        <h5>¿No estás registrado?</h5>
+                        <a href="registro.html">Registrarse</a>
+                        <h5>¿Olvidó su contraseña?</h5>
+                        <a href="#" id="forgotPassword">Recuperar contraseña</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <script>
+          document.getElementById('formulario').addEventListener('submit', function(event) {
+              event.preventDefault(); 
+
+              // Obtener las credenciales ingresadas por el usuario
+              var correo = document.getElementById('correo').value;
+              var contrasenna = document.getElementById('contrasenna').value;
+
+              // Recuperar los datos del localStorage
+              var usuarioGuardado = localStorage.getItem('usuario');
+              if 
+              
+              (usuarioGuardado) {
+                  // Convertir los datos del usuario de JSON a objeto JavaScript
+                  var usuario = JSON.parse(usuarioGuardado);
+
+                  // Verificar si las credenciales coinciden
+                  if (correo === usuario.correo && contrasenna === usuario.contrasenna) {
+                      // Credenciales correctas, permitir el acceso
+                      alert('Inicio de sesión exitoso. ¡Bienvenido, ' + usuario.nombre + '!');
+                      // Aquí podrías redirigir al usuario a la página principal de tu sitio
+                      window.location.href = 'index.html';
+                  } else {
+
+                      alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
+                  }
+              } else {
+                  alert('No hay datos de usuario registrados. Por favor, regístrate primero.');
+              }
+
+              
+          });
+
+          
+      </script>
+
+      <script>
+        document.getElementById("forgotPassword").addEventListener("click", function(event) {
+          event.preventDefault(); 
+
+          var userEmail = prompt("Por favor ingresa tu correo electrónico:");
+
+          if (userEmail) {
++
+            fetch("enviarCorreo.php", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ email: userEmail })
+            })
+            .then(response => {
+              if (response.ok) {
+                alert("Se ha enviado un correo electrónico con instrucciones para recuperar tu contraseña.");
+              } else {
+                alert("Hubo un error al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.");
+              }
+            })
+            .catch(error => {
+              console.error("Error:", error);
+              alert("Hubo un error al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.");
+            });
+          }
+        });
+      </script>
+
+    </main>
+
+
+    <script src="includes.js"></script>
+</body>
+
+</html>

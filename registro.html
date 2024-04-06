@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- El encabezado se agregará aquí mediante JavaScript -->
+    </header>  
+
+    <nav id="menu">
+        <!-- El contenido del menú se agregará aquí mediante JavaScript -->
+    </nav>
+
+    <footer>
+        <!-- El pie de página se agregará aquí mediante JavaScript -->
+    </footer>
+
+    <div class="contenido">
+        <div class="articulos">
+            <div class="secciones">
+                <div class="seccion">
+                    <div class="formulario">
+                        <h2>Regístrate</h2>
+                        <form id="formulario">
+
+                                <label for="cedula"> Cedula: </label>
+                                <input id="cedula" type="text" required>         
+
+                                <label for="nombre"> Nombre: </label>
+                                <input id="nombre" type="text" required>         
+
+                                <label for="apellidos"> Apellidos: </label>
+                                <input id="apellidos" type="text" required>         
+
+                                <label for="celular"> Celular: </label>
+                                <input id="celular" type="text" required>         
+
+                                <label for="correo"> Correo: </label>
+                                <input id="correo" type="email" required>               
+
+                                <label for="contrasenna"> Contraseña: </label>
+                                <input id="contrasenna" type="password" required>               
+
+                                <label for="contrasenna2"> Confirmar contraseña: </label>
+                                <input id="contrasenna2" type="password" required>               
+
+                            <button type="submit">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+
+            // Obtener los valores de los campos de entrada
+            var cedula = document.getElementById('cedula').value;
+            var nombre = document.getElementById('nombre').value;
+            var apellidos = document.getElementById('apellidos').value;
+            var celular = document.getElementById('celular').value;
+            var correo = document.getElementById('correo').value;
+            var contrasenna = document.getElementById('contrasenna').value;
+            var contrasenna2 = document.getElementById('contrasenna2').value;
+
+            // Crear un objeto para almacenar los datos del usuario
+            var usuario = {
+                cedula: cedula,
+                nombre: nombre,
+                apellidos: apellidos,
+                celular: celular,
+                correo: correo,
+                contrasenna: contrasenna,
+                contrasenna2: contrasenna2
+            };
+
+            // Almacenar los datos del usuario en localStorage
+            localStorage.setItem('usuario', JSON.stringify(usuario));
+            alert('¡Registro exitoso!');
+            document.getElementById('formulario').reset();
+
+            // Redirigir a la página inicial
+            window.location.href = 'inicioSesion.html';
+        });
+    </script>
+        
+    <script src="includes.js"></script> 
+
+</body>
+</html>

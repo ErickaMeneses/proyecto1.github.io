@@ -1,0 +1,57 @@
+/*ESTILO PARA LA ANIMACIÓN*/
+.heart {
+    width: 100px;
+    height: 90px;
+    position: absolute;
+    margin: 10px ;
+    
+
+}
+  
+.heart:before,
+.heart:after {
+    content: "";
+    width: 50px;
+    height: 80px;
+    background-color: red;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+}
+  
+.heart:before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+  
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+  
+.pulse {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulse-animation 1s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+  
+@keyframes pulse-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+

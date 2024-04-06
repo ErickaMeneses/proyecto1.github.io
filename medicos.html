@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Médicos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <!-- El encabezado se agregará aquí mediante JavaScript -->
+    </header>  
+
+    <nav id="menu">
+        <!-- El contenido del menú se agregará aquí mediante JavaScript -->
+    </nav>
+
+    <footer>
+        <!-- El pie de página se agregará aquí mediante JavaScript -->
+    </footer>
+
+
+
+    <main>
+        <div class="contenido">
+            <div class="articulos">
+                <h2>Buscar Médicos</h2>
+            
+                <div>
+                <select id="searchOption">
+                    <option value="nombre">Nombre</option>
+                    <option value="especialidad">Especialidad Médica</option>
+                    <option value="ubicacion">Ubicación Geográfica</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Ingrese su búsqueda aquí">
+                <button onclick="search()">Buscar</button>
+                </div>
+                <div>
+                <label for="sortOption">Ordenar por:</label>
+                <select id="sortOption" onchange="sortResults()">
+                    <option value="nombre">Nombre</option>
+                    <option value="especialidad">Especialidad</option>
+                    <option value="ubicacion">Ubicación</option>
+                </select>
+                </div>
+
+                <div id="searchResults"></div>
+                
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <div id="doctorDetail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+    </main>
+
+    <script src="js/medicos.js"></script>
+    <script src="includes.js"></script>
+</body>
+</html>

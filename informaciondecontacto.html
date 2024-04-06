@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Arbol de Seda</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <!-- El encabezado se agregará aquí mediante JavaScript -->
+    </header>  
+
+    <nav id="menu">
+        <!-- El contenido del menú se agregará aquí mediante JavaScript -->
+    </nav>
+
+    <footer>
+        <!-- El pie de página se agregará aquí mediante JavaScript -->
+    </footer>
+
+    <main>
+
+        <div class="contenido">
+            <div class="articulos">
+                <h2>Información de Contacto </h2>
+                <div id="map"></div>
+                <p><strong>Dirección:</strong> Turrialba, Cartago, Costa Rica</p>
+                <p><strong>Teléfono:</strong> +506 8888-0000</p>
+                <p><strong>Correo Electrónico:</strong> clinicaarbolseda@gmail.com</p>
+                <p>Síguenos en <a href="https://www.facebook.com/TuPaginaDeFacebook" target="_blank">Facebook</a></p>
+                <p><br/>Nuestro horario de atención es de lunes a sábado de 9:00 a.m. a 8:00 p.m.</p>
+ 
+                <p><br/><strong>Formulario de contacto para consultas generales o soporte técnico</strong></p>
+                
+
+                <form id="formularioContacto">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required><br>
+            
+                    <label for="email">Correo : </label>
+                    <input type="email" id="email" required><br>
+            
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" required></textarea><br>
+            
+                    <button type="submit">Enviar</button>
+                </form>
+
+                 <script>document.getElementById('formularioContacto').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevenir el envío del formulario
+            
+                    // Obtener los valores de los campos de entrada
+                    var nombre = document.getElementById('nombre').value;
+                    var email = document.getElementById('email').value;
+                    var mensaje = document.getElementById('mensaje').value;
+            
+                    // Crear un objeto para almacenar los datos del mensaje
+                    var mensajeData = {
+                        nombre: nombre,
+                        email: email,
+                        mensaje: mensaje
+                    };
+            
+                    // Almacenar los datos del mensaje en localStorage
+                    // Utiliza una clave única para cada mensaje para evitar sobrescribir datos anteriores
+                    var clave = 'mensaje_' + Date.now(); // Genera una clave única basada en la marca de tiempo
+                    localStorage.setItem(clave, JSON.stringify(mensajeData));
+            
+                    // Mostrar un mensaje de éxito
+                    alert('¡Mensaje enviado con éxito!');
+            
+                    // Limpiar el formulario después de enviar el mensaje
+                    document.getElementById('formularioContacto').reset();
+                });</script>
+            </div>
+        </div>
+    </main>
+
+    <script src="includes.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</body>
+</html>

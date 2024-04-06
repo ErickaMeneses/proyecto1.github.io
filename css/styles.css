@@ -1,0 +1,397 @@
+* {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box; 
+}
+
+body{
+    background: linear-gradient(
+        180deg, 
+        rgba(204,204,204,1) 0%,
+        rgb(137, 241, 198) 50%,
+        rgb(204, 204, 204) 100%
+        
+    );
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(0, 73, 83);
+    color: white;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
+nav ul {
+    background-color: rgb(0, 178, 178);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0; /* Agregar espacio interno */
+    
+}
+
+ 
+.contenido{
+    padding-bottom: 80px;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
+.articulos{
+    width:70%;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.seccion{
+    margin-top: 20px; /* Agrega 20px de espacio antes del contenido */
+    margin-bottom: 20px;
+}
+
+.menu-secundario{
+    margin-top: 245px;
+    position: absolute;
+    top: 0;
+}
+
+.menu-secundario a {
+  display: block;
+  text-align: center;
+  color: rgba(23, 23, 23, 0.749);
+  margin-bottom: 6px;
+  padding: 12px;
+  background-color: #a1bdb3;
+  width: 200px;
+}
+
+.container{
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+
+/*PIE DE PÁGINA*/
+
+footer{
+position: fixed; /* Fija el pie de página en la ventana del navegador */
+    bottom: 0; /* Lo posiciona en la parte inferior de la ventana */
+    width: 100%; /* Opcional: ancho completo del pie de página */
+    background-color: #333; /* Opcional: color de fondo */
+    color: #fff; /* Opcional: color de texto */
+    padding: 10px; /* Opcional: espacio alrededor del contenido del pie de página */
+    text-align: center; 
+}
+
+.flechaizquierda {
+    position: absolute;
+    top: 550px; 
+    left: 240px; 
+}
+
+.flechaderecha {
+    position: absolute;
+    top: 550px; 
+    left: 1330px; 
+}
+
+/*FORMATO PARA FORMULARIOS*/
+.formulario {
+    width: 400px; 
+    margin: 0 auto; 
+    padding: 100px; 
+    text-align: center;
+    font-size: 22px;
+}
+.formulario button[type="submit"] {
+    width: 70%;
+    padding: 10px; 
+    border-radius: 20px; 
+    background-color: #025f6b; 
+    color: #fff; 
+    cursor: pointer; 
+    font-size: 18px; 
+}
+.formulario input[type="email"],.formulario input[type="password"],.formulario input[type="text"],
+.formulario textarea {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 10px;
+}
+
+
+/*TAMAÑO PARA EL MAPS*/
+#map {
+    height: 350px;
+    width: 600px;
+}
+
+
+
+
+
+
+/* CSS for the modal BUSQUEDA DE DOCTORES*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #logo {
+    width: 40px; /* Ancho deseado */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    position: fixed; /* Posición fija para que se mantenga en la misma posición en la ventana */
+    top: 15px; /* Distancia desde la parte superior */
+    right: 15px; /* Distancia desde el lado derecho */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+  }
+
+
+
+
+
+  /*ESTILO PARA EL CARRUSEL*/
+
+  .container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 1fr / 5% 1fr 5%;
+    grid-template-areas: "prev carousel next";
+    justify-items: center;
+    align-items: center;
+    margin-top: 25vh;
+  }
+  .anterior {
+    grid-area: prev; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;                
+  }
+  .despues {
+    grid-area: next; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;                   
+  }
+  .carousel {
+    grid-area: carousel;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 5px);
+    height: auto;   
+    position: relative;
+  }
+  .tarjeta {
+
+    width: 100px;   
+    height: 100px;
+    position: absolute;
+  }
+  .tarjeta img{
+    width: 120px;
+    height: 120px;
+  }
+  .boton {
+    position: relative;
+    margin-top: 15%;
+    text-align: center;
+  }
+  button:focus {
+    outline: none;
+  }
+  .a{ 
+    left: 0; 
+    z-index: 0;
+  }
+  .b{ 
+    transform: scale(1.5, 1.5);             
+    left: calc(25% - 50px);
+    z-index: 1;
+  }
+  .c{ 
+    transform: scale(2, 2); 
+    left: calc(50% - 50px);
+    z-index: 2;
+  }
+  .d{ 
+    transform: scale(1.5, 1.5); 
+    right: calc(25% - 50px);
+    z-index: 1;
+  }
+  .e{ 
+    right: 0; 
+    z-index: 0;
+  }  
+  
+  @media screen and (max-width: 420px){ 
+    .container {
+        grid-template: 1fr 1fr / 1fr 1fr;
+        grid-template-areas: "carousel carousel"
+                             "anterior despues";
+    }
+    .next, .prev {
+        margin-top: 70px;
+    }
+  }
+  
+  @keyframes BtoA {
+    from{
+        left: calc(25% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;                
+    }
+    to{
+        left: 0;
+        transform: scale(1, 1); 
+        z-index: 0;                               
+    }
+  }
+  
+  @keyframes AtoB {
+    from{
+        left: 0;
+        transform: scale(1, 1); 
+        z-index: 0;                
+    }
+    to{
+        left: calc(25% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;                              
+    }
+  }
+  
+  @keyframes CtoB {
+    from{
+        left: calc(50% - 50px);
+        transform: scale(2, 2);
+        z-index: 2;                
+    }
+    to{
+        left: calc(25% - 50px);
+        transform: scale(1.5, 1.5); 
+        z-index: 1;                               
+    }
+  }
+  
+  @keyframes BtoC {
+    from{
+        left: calc(25% - 50px);
+        transform: scale(1.5, 1.5); 
+        z-index: 1;                 
+    }
+    to{
+        left: calc(50% - 50px);
+        transform: scale(2, 2);
+        z-index: 2;                                
+    }
+  }
+  
+  @keyframes DtoC {
+    from{
+        left: calc(75% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;
+        
+    }
+    to{
+        left: calc(50% - 50px);
+        transform: scale(2, 2);
+        z-index: 2;            
+    }
+  }   
+  
+  @keyframes CtoD {
+    from{
+        left: calc(50% - 50px);
+        transform: scale(2, 2);
+        z-index: 2; 
+    }
+    to{
+        left: calc(75% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;            
+    }
+  }  
+  
+  @keyframes EtoD {
+    from{
+        right: 0;
+        transform: scale(1, 1);
+        z-index: 0;
+    }
+    to{
+        right: calc(25% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;
+    }
+  }   
+  
+  @keyframes DtoE {
+    from{
+        right: calc(25% - 50px);
+        transform: scale(1.5, 1.5);
+        z-index: 1;
+    }
+    to{
+        right: 0;
+        transform: scale(1, 1);
+        z-index: 0;
+    }
+  }   
+  
+  @keyframes AtoE {
+    from{
+        left: 0;
+        z-index: 0;
+    }
+    to{
+        left: calc(100% - 110px);
+        z-index: 0;      
+    }
+  }  
+  
+  @keyframes EtoA {
+    from{
+        left: calc(100% - 100px);
+        z-index: 0; 
+    }
+    to{
+        left: 0;
+        z-index: 0;    
+    }
+  }
+  
