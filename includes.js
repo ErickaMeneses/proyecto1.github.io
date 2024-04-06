@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     const menu = document.querySelector("#menu");
     menu.innerHTML = '<div class="menu-secundario">' +
-        '<a href="#agenda">Agenda de citas</a>' +
+        '<a href="agendarcita.html">Agenda de citas</a>' +
         '<a href="medicos.html">Búsqueda de médicos</a>' +
         '<a href="sobrenosotros.html">Sobre nosotros</a>' +
         '<a href="servicios.html">Servicios</a>' +
